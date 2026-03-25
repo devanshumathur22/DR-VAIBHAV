@@ -11,7 +11,7 @@ export default function ContactPage() {
     problem: "",
   });
 
-  const handleChange = (e) => {
+ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
