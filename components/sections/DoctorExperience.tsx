@@ -55,10 +55,16 @@ By choosing BrainSpineMind Clinic, you are making an informed decision about you
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="absolute -left-10 top-10 bg-white/70 backdrop-blur-xl border border-slate-200 rounded-2xl px-6 py-4 shadow-xl"
+            className="
+  absolute 
+  left-1/2 -translate-x-1/2 bottom-4
+  md:left-auto md:-left-10 md:top-10 md:bottom-auto md:translate-x-0
+  bg-white/70 backdrop-blur-xl border border-slate-200 
+  rounded-2xl px-5 py-3 shadow-xl
+"
           >
             <h3 className="text-3xl font-bold text-teal-600">
-              <CountUp end={14} duration={2} />+
+              <CountUp end={13} duration={2} />+
             </h3>
             <p className="text-sm text-slate-600">Years Experience</p>
           </motion.div>
