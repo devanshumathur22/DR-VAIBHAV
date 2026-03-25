@@ -23,7 +23,8 @@ export default function DBSPage() {
 const [open, setOpen] = useState<string | null>(null);
   const [openIndex, setOpenIndex] = useState(null);
   const [index, setIndex] = useState(0);
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openSection, setOpenSection] = useState<string | null>(null);
+const [openFaq, setOpenFaq] = useState<number | null>(null);
   
   const videos = [
   "https://youtu.be/sZ-_zpxAeq8?si=jIdMIh539qyi_o-s",
@@ -735,30 +736,34 @@ const data = [
     </section>
     
       {/* FAQ */}
-      <section className="py-20 bg-gradient-to-br from-teal-700 to-cyan-700 text-white">
-        <div className="max-w-4xl mx-auto px-6">
+    <section className="py-20 bg-gradient-to-br from-teal-700 to-cyan-700 text-white">
+  <div className="max-w-4xl mx-auto px-6">
 
-          <h2 className="text-3xl font-semibold text-center mb-10">
-            FAQs
-          </h2>
+    <h2 className="text-3xl font-semibold text-center mb-10">
+      FAQs
+    </h2>
 
-          {faqs.map((item, i) => (
-            <div key={i} className="border-b border-white/20 py-4">
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="flex justify-between w-full text-left"
-              >
-                {item.q}
-                <ChevronDown />
-              </button>
+    {faqs.map((item, i) => (
+      <div key={i} className="border-b border-white/20 py-4">
+        <button
+          onClick={() => setOpenFaq(openFaq === i ? null : i)}
+          className="flex justify-between w-full text-left cursor-pointer"
+        >
+          {item.q}
+          <ChevronDown
+            className={`transition-transform ${
+              openFaq === i ? "rotate-180" : ""
+            }`}
+          />
+        </button>
 
-              {open === i && (
-                <p className="mt-2 text-white/80">{item.a}</p>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+        {openFaq === i && (
+          <p className="mt-2 text-white/80">{item.a}</p>
+        )}
+      </div>
+    ))}
+  </div>
+</section>
 
     </div>
   );
