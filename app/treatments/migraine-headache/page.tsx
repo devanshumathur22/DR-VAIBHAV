@@ -18,7 +18,7 @@ export default function MigrainePage() {
           <div className="mb-6 overflow-hidden rounded-xl">
             <motion.div whileHover={{ scale: 1.08 }}>
               <Image
-                src="/migraine.jpg"
+                src="/Migraine.jpg"
                 alt="Migraine"
                 width={300}
                 height={300}

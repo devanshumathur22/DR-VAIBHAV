@@ -18,7 +18,7 @@ export default function DementiaTreatmentPage() {
           <div className="mb-6 overflow-hidden rounded-xl">
             <motion.div whileHover={{ scale: 1.08 }}>
               <Image
-                src="/dementia.jpg"
+                src="/Dementia.jpg"
                 alt="Dementia"
                 width={300}
                 height={300}

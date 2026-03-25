@@ -18,7 +18,7 @@ export default function StrokePage() {
           <div className="mb-6 overflow-hidden rounded-xl">
             <motion.div whileHover={{ scale: 1.08 }}>
               <Image
-                src="/stroke.jpg"
+                src="/Stroke.jpg"
                 alt="Stroke"
                 width={300}
                 height={300}

@@ -18,7 +18,7 @@ export default function ParkinsonPage() {
           <div className="mb-6 overflow-hidden rounded-xl">
             <motion.div whileHover={{ scale: 1.08 }}>
               <Image
-                src="/parkinson.jpg"
+                src="/Parkinson.jpg"
                 alt="Parkinson"
                 width={300}
                 height={300}

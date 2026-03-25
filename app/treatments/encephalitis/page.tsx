@@ -18,7 +18,7 @@ export default function EncephalitisPage() {
           <div className="mb-6 overflow-hidden rounded-xl">
             <motion.div whileHover={{ scale: 1.08 }}>
               <Image
-                src="/encephalitis.jpg"
+                src="/Encephalitis.jpg"
                 alt="Encephalitis"
                 width={300}
                 height={300}

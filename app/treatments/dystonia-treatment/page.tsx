@@ -18,7 +18,7 @@ export default function DystoniaPage() {
           <div className="mb-6 overflow-hidden rounded-xl">
             <motion.div whileHover={{ scale: 1.08 }}>
               <Image
-                src="/dystonia.jpg"
+                src="/Dystonia.jpg"
                 alt="Dystonia"
                 width={300}
                 height={300}

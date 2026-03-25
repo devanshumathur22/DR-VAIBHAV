@@ -18,7 +18,7 @@ export default function AboutDetails() {
           <div className="mb-6 overflow-hidden rounded-xl">
             <motion.div whileHover={{ scale: 1.08 }}>
               <Image
-                src="/epilepsy.jpg"
+                src="/Epilepsy.jpg"
                 alt="Epilepsy"
                 width={220}
                 height={220}

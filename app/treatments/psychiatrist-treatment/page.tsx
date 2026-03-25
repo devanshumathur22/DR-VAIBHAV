@@ -18,7 +18,7 @@ export default function PsychiatristPage() {
           <div className="mb-6 overflow-hidden rounded-xl">
             <motion.div whileHover={{ scale: 1.08 }}>
               <Image
-                src="/psychiatrist.jpg"
+                src="/Psychiatrist.jpg"
                 alt="Psychiatrist Treatment"
                 width={250}
                 height={100}

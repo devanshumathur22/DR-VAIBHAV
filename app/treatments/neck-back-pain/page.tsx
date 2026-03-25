@@ -18,7 +18,7 @@ export default function NeckBackPainPage() {
           <div className="mb-6 overflow-hidden rounded-xl">
             <motion.div whileHover={{ scale: 1.08 }}>
               <Image
-                src="/neck.jpg"
+                src="/Neck.jpg"
                 alt="Neck and Back Pain"
                 width={300}
                 height={300}

@@ -18,7 +18,7 @@ export default function MovementDisorderPage() {
           <div className="mb-6 overflow-hidden rounded-xl">
             <motion.div whileHover={{ scale: 1.08 }}>
               <Image
-                src="/movement.jpg"
+                src="/Movement.jpg"
                 alt="Movement Disorder"
                 width={300}
                 height={300}
