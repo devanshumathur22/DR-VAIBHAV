@@ -20,7 +20,7 @@ import {
 
 
 export default function DBSPage() {
-  const [open, setOpen] = useState(null);
+const [open, setOpen] = useState<string | null>(null);
   const [openIndex, setOpenIndex] = useState(null);
   const [index, setIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
@@ -429,7 +429,7 @@ const data = [
             {/* Expertise */}
             <div className="mt-8 border rounded-xl overflow-hidden">
               <button
-                onClick={() => setOpen(open === "expertise" ? "" : "expertise")}
+             onClick={() => setOpen(open === "expertise" ? null : "expertise")}   
                 className="w-full flex justify-between items-center p-4 text-slate-800 font-medium"
               >
                 Fields of Expertise
