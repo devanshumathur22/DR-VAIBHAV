@@ -44,34 +44,38 @@ export default function Navbar() {
     { name: "Psychiatrist Treatment", slug: "psychiatrist-treatment" },
   ];
 
+  const handleMobileClick = () => {
+    setMobile(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       {/* 🔥 TOP BAR */}
       <div className="w-full bg-teal-600 text-white text-sm">
-        <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-between gap-2">
 
           {/* LEFT */}
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 text-xs md:text-sm">
             <div className="flex items-center gap-2">
-              <Phone size={16} />
+              <Phone size={14} />
               <span>+91 9664386295</span>
             </div>
 
             <div className="flex items-center gap-2">
-              <Mail size={16} />
+              <Mail size={14} />
               <span>info@brainspinemind.com</span>
             </div>
           </div>
 
           {/* RIGHT */}
-          <div className="flex items-center gap-4">
-
+          <div className="flex items-center gap-3">
             <a
               href="https://www.facebook.com/drvaibhavneurologist"
               target="_blank"
               className="hover:text-yellow-300 transition cursor-pointer"
             >
-              <Facebook size={18} />
+              <Facebook size={16} />
             </a>
 
             <a
@@ -79,30 +83,26 @@ export default function Navbar() {
               target="_blank"
               className="hover:text-yellow-300 transition cursor-pointer"
             >
-              <Instagram size={18} />
+              <Instagram size={16} />
             </a>
 
             <a
-              href="https://www.google.com/maps/place/Neurologist+Dr.+Vaibhav+Mathur/@26.8862826,75.7511834,17z/data=!3m1!4b1!4m6!3m5!1s0x396db500ad275b67:0x5c167e5abc2ff9c1!8m2!3d26.8862826!4d75.7537583!16s%2Fg%2F11p61mv4wg?shorturl=1"
+              href="https://www.google.com/maps/place/Neurologist+Dr.+Vaibhav+Mathur/"
               target="_blank"
               className="hover:text-yellow-300 transition cursor-pointer"
             >
-              <Globe size={18} />
+              <Globe size={16} />
             </a>
-
           </div>
         </div>
       </div>
 
       {/* 🔥 NAVBAR */}
-      <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/60 border-b border-white/30 shadow-lg">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <nav className="sticky top-0 z-[999] backdrop-blur-xl bg-white/70 border-b border-white/30 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
           {/* LOGO */}
-          <Link
-            href="/"
-            className="text-2xl font-bold text-slate-900 cursor-pointer"
-          >
+          <Link href="/" className="text-xl md:text-2xl font-bold text-slate-900">
             BrainCare
           </Link>
 
@@ -113,7 +113,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`py-2 cursor-pointer hover:text-teal-600 transition ${
+                className={`py-2 hover:text-teal-600 ${
                   pathname === link.href ? "text-teal-600" : "text-slate-700"
                 }`}
               >
@@ -123,7 +123,7 @@ export default function Navbar() {
 
             {/* DROPDOWN */}
             <div
-              className="relative cursor-pointer"
+              className="relative"
               onMouseEnter={() => setOpen(true)}
               onMouseLeave={() => setOpen(false)}
             >
@@ -141,13 +141,13 @@ export default function Navbar() {
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 15 }}
-                    className="absolute top-10 left-0 w-80 bg-white/70 backdrop-blur-xl border border-white/40 rounded-xl shadow-xl p-2"
+                    className="absolute top-10 left-0 w-80 bg-white/80 backdrop-blur-xl border rounded-xl shadow-xl p-2"
                   >
                     {treatments.map((item, i) => (
                       <Link
                         key={i}
                         href={`/treatments/${item.slug}`}
-                        className="block px-4 py-2 rounded-lg hover:bg-teal-50 text-slate-700 cursor-pointer"
+                        className="block px-4 py-2 rounded-lg hover:bg-teal-50"
                       >
                         {item.name}
                       </Link>
@@ -161,7 +161,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`py-2 cursor-pointer hover:text-teal-600 transition ${
+                className={`py-2 hover:text-teal-600 ${
                   pathname === link.href ? "text-teal-600" : "text-slate-700"
                 }`}
               >
@@ -173,13 +173,13 @@ export default function Navbar() {
           {/* BUTTON */}
           <Link
             href="/contact"
-            className="hidden md:block px-5 py-2 rounded-full bg-teal-600 text-white text-sm hover:bg-teal-700 transition cursor-pointer"
+            className="hidden md:block px-5 py-2 rounded-full bg-teal-600 text-white text-sm hover:bg-teal-700"
           >
             Book Appointment
           </Link>
 
           {/* MOBILE BTN */}
-          <button onClick={() => setMobile(!mobile)} className="md:hidden cursor-pointer">
+          <button onClick={() => setMobile(!mobile)} className="md:hidden">
             {mobile ? <X /> : <Menu />}
           </button>
         </div>
@@ -191,7 +191,7 @@ export default function Navbar() {
               initial={{ height: 0 }}
               animate={{ height: "auto" }}
               exit={{ height: 0 }}
-              className="md:hidden bg-white/80 backdrop-blur-xl border-t"
+              className="md:hidden bg-white/90 backdrop-blur-xl border-t"
             >
               <div className="px-6 py-6 flex flex-col gap-4">
 
@@ -199,8 +199,7 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    onClick={() => setMobile(false)}
-                    className="cursor-pointer"
+                    onClick={handleMobileClick}
                   >
                     {link.name}
                   </Link>
@@ -213,8 +212,8 @@ export default function Navbar() {
                     <Link
                       key={i}
                       href={`/treatments/${item.slug}`}
-                      onClick={() => setMobile(false)}
-                      className="block py-1 text-sm text-gray-600 cursor-pointer"
+                      onClick={handleMobileClick}
+                      className="block py-1 text-sm text-gray-600"
                     >
                       {item.name}
                     </Link>
@@ -223,7 +222,8 @@ export default function Navbar() {
 
                 <Link
                   href="/contact"
-                  className="mt-4 bg-teal-600 text-white text-center py-3 rounded-xl cursor-pointer"
+                  onClick={handleMobileClick}
+                  className="mt-4 bg-teal-600 text-white text-center py-3 rounded-xl"
                 >
                   Book Appointment
                 </Link>
