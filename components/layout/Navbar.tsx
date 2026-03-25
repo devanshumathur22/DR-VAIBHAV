@@ -44,9 +44,13 @@ export default function Navbar() {
     { name: "Psychiatrist Treatment", slug: "psychiatrist-treatment" },
   ];
 
+  // ✅ 🔥 PERFECT MOBILE SCROLL FIX
   const handleMobileClick = () => {
     setMobile(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 50);
   };
 
   return (
@@ -55,7 +59,6 @@ export default function Navbar() {
       <div className="w-full bg-teal-600 text-white text-sm">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-between gap-2">
 
-          {/* LEFT */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 text-xs md:text-sm">
             <div className="flex items-center gap-2">
               <Phone size={14} />
@@ -68,12 +71,11 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* RIGHT */}
           <div className="flex items-center gap-3">
             <a
               href="https://www.facebook.com/drvaibhavneurologist"
               target="_blank"
-              className="hover:text-yellow-300 transition cursor-pointer"
+              className="hover:text-yellow-300"
             >
               <Facebook size={16} />
             </a>
@@ -81,7 +83,7 @@ export default function Navbar() {
             <a
               href="https://www.instagram.com/dr.vaibhavmathur/"
               target="_blank"
-              className="hover:text-yellow-300 transition cursor-pointer"
+              className="hover:text-yellow-300"
             >
               <Instagram size={16} />
             </a>
@@ -89,7 +91,7 @@ export default function Navbar() {
             <a
               href="https://www.google.com/maps/place/Neurologist+Dr.+Vaibhav+Mathur/"
               target="_blank"
-              className="hover:text-yellow-300 transition cursor-pointer"
+              className="hover:text-yellow-300"
             >
               <Globe size={16} />
             </a>
@@ -101,7 +103,6 @@ export default function Navbar() {
       <nav className="sticky top-0 z-[999] backdrop-blur-xl bg-white/70 border-b border-white/30 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
-          {/* LOGO */}
           <Link href="/" className="text-xl md:text-2xl font-bold text-slate-900">
             BrainCare
           </Link>
@@ -199,6 +200,7 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
+                    scroll={false}
                     onClick={handleMobileClick}
                   >
                     {link.name}
@@ -212,6 +214,7 @@ export default function Navbar() {
                     <Link
                       key={i}
                       href={`/treatments/${item.slug}`}
+                      scroll={false}
                       onClick={handleMobileClick}
                       className="block py-1 text-sm text-gray-600"
                     >
@@ -222,6 +225,7 @@ export default function Navbar() {
 
                 <Link
                   href="/contact"
+                  scroll={false}
                   onClick={handleMobileClick}
                   className="mt-4 bg-teal-600 text-white text-center py-3 rounded-xl"
                 >
