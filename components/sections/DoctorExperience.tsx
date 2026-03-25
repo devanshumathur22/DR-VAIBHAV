@@ -6,7 +6,6 @@ import CountUp from "react-countup";
 import { useState } from "react";
 
 export default function DoctorExperience() {
-
   const [open, setOpen] = useState(false);
 
   const shortText = `
@@ -39,7 +38,6 @@ By choosing BrainSpineMind Clinic, you are making an informed decision about you
           viewport={{ once: true }}
           className="relative flex justify-center"
         >
-
           <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
             <Image
               src="/5.png"
@@ -49,26 +47,6 @@ By choosing BrainSpineMind Clinic, you are making an informed decision about you
               className="object-cover"
             />
           </div>
-
-          {/* experience card */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="
-  absolute 
-  left-1/2 -translate-x-1/2 bottom-4
-  md:left-auto md:-left-10 md:top-10 md:bottom-auto md:translate-x-0
-  bg-white/70 backdrop-blur-xl border border-slate-200 
-  rounded-2xl px-5 py-3 shadow-xl
-"
-          >
-            <h3 className="text-3xl font-bold text-teal-600">
-              <CountUp end={13} duration={2} />+
-            </h3>
-            <p className="text-sm text-slate-600">Years Experience</p>
-          </motion.div>
-
         </motion.div>
 
         {/* RIGHT CONTENT */}
@@ -105,6 +83,21 @@ By choosing BrainSpineMind Clinic, you are making an informed decision about you
               Providing world-class treatment facilities with a patient-first approach and advanced medical technology.
             </p>
           </div>
+
+          {/* 🔥 EXPERIENCE CARD (NEW POSITION) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mt-6 flex items-center gap-4 bg-white/70 backdrop-blur-xl border border-slate-200 rounded-2xl px-5 py-4 shadow-md"
+          >
+            <h3 className="text-3xl font-bold text-teal-600">
+              <CountUp end={13} duration={2} />+
+            </h3>
+            <p className="text-sm text-slate-600">
+              Years of Experience in Neurology Care
+            </p>
+          </motion.div>
 
         </motion.div>
 
